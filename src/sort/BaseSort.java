@@ -4,6 +4,7 @@ package sort;
 import tools.Rand;
 
 /**
+ * 排序方法基类
  * Created by RenChao on 18/7/18.
  */
 public abstract class BaseSort {
@@ -15,12 +16,13 @@ public abstract class BaseSort {
     }
 
     int[] list;
-    public BaseSort(){
+
+    public BaseSort() {
         this.list = Rand.produce(10);
     }
+
     public void setList(int[] list) {
-        if(list.length<=0)
-        {
+        if (list.length <= 0) {
             System.out.println("排序数组不能为空!");
         }
         this.list = list;
@@ -28,12 +30,12 @@ public abstract class BaseSort {
 
     public abstract int[] run();
 
-    public void exec(){
+    public void exec() {
         long startTime = System.nanoTime();
         run();
         long endTime = System.nanoTime();
-        float excTime = (float) (endTime - startTime)/1000;
-        System.out.println("运行时长:"+excTime+"毫秒");
+        float excTime = (float) (endTime - startTime) / 1000;
+        System.out.println("运行时长:" + excTime + "毫秒");
     }
 
     protected int operator(int a, int b) {
@@ -49,9 +51,9 @@ public abstract class BaseSort {
         return ret;
     }
 
-    public String toString(){
-        String s = "排序结果为："+"\n";
-        for(int i:list){
+    public String toString() {
+        String s = "排序结果为：" + "\n";
+        for (int i : list) {
             s += i + " ";
         }
         return s;

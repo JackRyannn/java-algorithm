@@ -6,13 +6,13 @@ package sort;
  * 分组后用直接插入排序
  */
 public class ShellSort extends BaseSort {
-    private static int delta =5;
+    private static int delta = 5;
 
     @Override
     public int[] run() {
         int gap = list.length / delta;
         while (gap >= 0) {
-            if(gap<1)
+            if (gap < 1)
                 gap = 1;
 
             for (int i = 0; i < gap; i++) {
@@ -31,7 +31,7 @@ public class ShellSort extends BaseSort {
                     }
                 }
             }
-            if(gap==1)
+            if (gap == 1)
                 break;
             gap /= delta;
 

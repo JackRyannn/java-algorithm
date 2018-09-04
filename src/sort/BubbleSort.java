@@ -3,7 +3,7 @@ package sort;
 /**
  * Created by RenChao on 18/7/17.
  */
-public class BubbleSort extends BaseSort{
+public class BubbleSort extends BaseSort {
 
     public int[] run() {
         for (int i = list.length - 1; i > 0; i--) {
